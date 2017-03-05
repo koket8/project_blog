@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  car: one
+  street: one
+  body: MyText
+
+two:
+  car: two
+  street: two
+  body: MyText

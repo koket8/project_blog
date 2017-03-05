@@ -1,0 +1,59 @@
+
+  
+
+     <div class= "find container center">
+  <%= form_tag "/search/create", method: :get, remote: true, id: "search-form" do %>
+
+
+<%= text_field_tag :keyword, nil, placeholder: "buscar articulo", class: "form-find" %>
+
+
+<%= content_tag :button, class: "btn be-red white", type: :submit do %>
+
+buscar
+
+
+<% end %>
+<% end %>
+
+</div>
+
+<div id="resultados" class= "container color">
+  
+  
+</div>
+
+
+
+
+
+
+<div class="container">
+
+
+
+
+<% @streets.ultimos.each do |street|  %>
+	
+   <h1><%= link_to street.title.upcase, street  %>  </h1>
+           
+    
+    
+    <div>
+   <h2> <%=  truncate(street.body.html_safe, :lenght => 25) %> ///  
+
+
+ 
+   <%= link_to "eliminar articulo", street, method: :delete %></h2>
+  
+
+
+      
+
+    </div>
+        
+     
+
+<% end  %>
+
+</div>

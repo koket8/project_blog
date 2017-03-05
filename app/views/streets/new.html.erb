@@ -1,0 +1,64 @@
+
+
+
+<div class="container">
+<div class="center">
+  
+<h1>Consulta, pregunta o critica cualquier basura que quieras </h1>
+</div>
+
+ 
+<%= form_for @street, url: {action: "create"}  do |f| %>
+    
+      
+    <%  @street.errors.full_messages.each do |variable|  %>
+           	<div class=" errores ">
+    <%= "   leee error = #{variable}" %>
+             </div>
+    <%  end    %>
+             
+  
+
+  <div class= "field">
+        <%= f.text_field :title, placeholder: "titulo del mensaje(obligatorio)", class: "form-control" %>
+      </div>
+
+
+<div class= "field"><h2>imagen(opcional)</h2> <%=  f.file_field :cover, class: "form-control"  %> </div>
+
+
+
+<div class= "field"><%= f.trix_editor :body, placeholder: "cuerpo del mensaje(opcional)", class: "form-control"  %></div>
+
+
+
+<div class= "categoria">
+          
+          <h1> carrera(s) a las que quieres dirigir el mensaje (OBLIGATORIO) </h1>
+         
+          <%  @categories.each do |category| %>
+          <div><h2> <%= check_box_tag "[categories[]", category.id %> <%= category.name %></h2></div>
+          <% end %> 
+
+
+</div>
+ 
+
+   
+
+
+<div class="field">
+<%= f.submit "crear articulo", class: "btn be-red white"  %>
+</div>
+  
+	<%    end    %>
+
+</div>
+
+</div>
+
+
+
+
+
+

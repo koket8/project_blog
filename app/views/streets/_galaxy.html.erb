@@ -1,0 +1,94 @@
+<div class="row  padding middle-xs">
+    
+    <div class="col-xs-1 ">
+        <div class="box">
+</div>
+    </div>
+
+
+    <div class="col-xs-2 marge ">
+        <div class="box">
+           <h2> <%= link_to "QUESTICS", root_path %> <h2>
+        </div>
+    </div>
+    
+ <div class="col-xs-2">
+        <div class="box">
+           <%= link_to "articulos", streets_path %>
+        </div>
+    </div>
+
+
+
+
+<% if car_signed_in? %>
+
+<div class="col-xs-2  ">
+        <div class="box">
+          <%= link_to "perfil", car_path(current_car.id) %> 
+        </div>
+    </div>
+  
+
+
+
+
+<div class="col-xs-2  ">
+        <div class="box">
+          <%= link_to 'crear'.html_safe, new_street_path %>
+        </div>
+    </div>
+
+
+
+
+<div class="col-xs-2 ">
+    <div class="box">
+     <%= link_to "salir", destroy_car_session_path, method: :delete %>
+  </div>
+   </div>
+
+
+<% else %>
+
+<div class="col-xs-2 ">
+	
+    	
+    <div class="box">
+		
+
+              <%= link_to "ingresar", new_car_session_path %>
+	</div>
+   
+
+
+</div>
+
+<div class="col-xs-2">
+	
+    	
+    <div class="box">
+		
+
+              <%= link_to "registrarse", new_car_registration_path %>
+	</div>
+   
+
+
+</div>
+
+
+
+
+
+<% end %>
+
+
+
+
+</div>
+
+
+</div>
+
+  

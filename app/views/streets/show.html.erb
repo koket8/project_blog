@@ -1,0 +1,75 @@
+
+      
+   
+      <div class="container center">
+
+
+
+<%= select_tag 'category_id', options_from_collection_for_select( @categories, "id", "name"), :prompt => "seleccionar carrera",:onchange => "window.location.replace('/categories/'+this.value);", class: "form-control" %>
+
+</div>
+  
+<div class="container center">
+     
+                <%= button_to "crear articulo", new_street_path, class: "btn be-blue white" %>
+                                                 
+                  </div>
+
+     
+<div id="resultados" class= "container color">
+  
+  
+</div>
+
+
+
+
+
+
+<div class="container">
+ 
+      
+
+<div class="center ">
+     <% unless @street.car.nil? %> 
+    <p>
+       <h2> PUBLICADO POR <%= link_to @street.car.username.upcase, car_streets_path(@street.car) %> </h2>
+   </p>
+   <% end %>
+    
+   </div>
+
+
+    <div class="anunbod">
+    <h1><%= @street.title %></h1>  
+</div>
+
+  <div class="center"> 
+  
+
+  <% if @street.cover.file? %>
+  <%= image_tag @street.cover.url(:thumb) %>  
+    
+
+    <%else%>
+<% end %>
+ 
+ </div>
+ 
+        <div class="anunbody"> 
+        <h3> <%=  sanitize(@street.body.html_safe) %> </h3>
+    </div>
+      
+
+ <%= render "streets/anuncios" %>
+
+           
+
+
+</div>
+  
+    
+
+   
+   
+   

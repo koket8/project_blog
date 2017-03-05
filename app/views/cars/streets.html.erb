@@ -1,0 +1,45 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+
+<div class="center">
+<h1> PERFIL DE <%=@car.username.upcase  %></h1><%= image_tag(@car.avatar, :class=> "img-circular") %>
+</div>
+
+
+<div class="">
+
+<h1>ARTICULOS SUBIDOS</h1>
+
+</div>
+
+<% @streets.each do |street|  %>
+	
+   <h1><%= link_to street.title.upcase.truncate(63) , street  %> - <%= "#{street.views} vista(s)" %>  </h1>
+           
+    
+    
+    <div class="borderr">
+       <h2><%=  sanitize(street.body).truncate(60, :separator => " ").html_safe %></h2>
+    </div>
+        
+<% end  %>
+
+
+
+
+
+</div>

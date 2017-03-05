@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	</head>
+<body>
+
+<h1><%= @street.title %></h1>
+
+<p>
+	
+     <%= truncate(@street.body, length: 30) %>
+
+</p>
+
+
+<%= link_to "leeer mas", street_url(@street) %>
+
+
+</body>
+</html>

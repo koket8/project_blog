@@ -1,0 +1,18 @@
+
+
+<div class="space2"> 
+
+
+
+        
+
+<%= image_tag(anuncio.car.avatar, { width: "70", height: "65", align: "left" })  %> 
+
+<h2><%= link_to anuncio.car.username, car_streets_path(anuncio.car) %> - <%= time_ago_in_words(anuncio.created_at) %></h2></div>
+
+
+            
+              
+             <div class="space"><h3> <%= sanitize(anuncio.body.html_safe) %></h3></div>
+
+              

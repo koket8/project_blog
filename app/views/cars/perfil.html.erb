@@ -1,0 +1,30 @@
+<div class="container">
+
+
+<h1><%= image_tag(@car.avatar, :class=> "img-circular") %> PERFIL DE <%=@car.username.upcase  %></h1>
+
+
+
+<div class="center">
+
+<h1>ARTICULOS SUBIDOS</h1>
+
+</div>
+
+<% @streets.each do |street|  %>
+	
+   <h1><%= link_to "#{street.title.upcase} ", street  %>  </h1>
+           
+    
+    
+    <div>
+   <h2> <%= raw street.body %> <%= link_to "eliminar articulo", street, method: :delete %> </h2>
+    </div>
+        
+<% end  %>
+
+
+
+
+
+</div>

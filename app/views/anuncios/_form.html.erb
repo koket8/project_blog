@@ -1,0 +1,33 @@
+<%= form_for([@street,@anuncio], :remote => true, html: {id: "anuncios-form"})  do |f| %>
+  <% if @anuncio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@anuncio.errors.count, "error") %> prohibited this @anuncio from being saved:</h2>
+
+      <ul>
+      <% @anuncio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+ 
+
+  
+  <% if car_signed_in? %>
+  <div class="field trix" ><%=  f.trix_editor :body, required: true, placeholder: "Da tu respuesta", class: "form-control" %></div>
+  <% else %>
+
+   <div class="field trix" ><%=  f.trix_editor :body, placeholder: "Da tu respuesta", class: "form-control" %></div>
+   
+   <div class="gold"><h2>debes iniciar sesion para poder dar tu respuesta</h2></div>
+
+  <% end %>
+  
+
+  <div class="actions">
+    <%= f.submit "publicar", class: "btn be-red white"  %>
+  </div>
+<% end %>
+

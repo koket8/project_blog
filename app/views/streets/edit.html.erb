@@ -1,0 +1,34 @@
+
+<div class="container">
+<div class="center">
+<h1>editar articulo</h1>
+</div>
+<%= form_for @street, url: { action: "update"}   do |f| %>
+    
+      
+    <%  @street.errors.full_messages.each do |variable|  %>
+           	<div class=" errores ">
+    <%= "   leer error = #{variable}" %>
+             </div>
+    <%  end    %>
+             
+  
+
+  <div class= "field">
+        <%= f.text_field :title, placeholder: "titulo",  class: "form-control" %>
+</div>
+
+
+<div class= "field">
+          <%= f.trix_editor :body, placeholder: "cuerpo", placeholder: "cuerpo del mensaje",  class: "form-control" %>
+</div>
+
+    
+   
+
+    <%= f.submit "editar", class: "btn be-red white"  %>
+
+     
+
+<%    end    %>
+</div>

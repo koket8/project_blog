@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Car:</strong>
+  <%= @anuncio.car %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @anuncio.street %>
+</p>
+
+<p>
+  <strong>mensaje:</strong>
+  <%= @anuncio.body %>
+</p>
+
+<%= link_to 'Edit', edit_anuncio_path(@anuncio) %> |
+<%= link_to 'Back', anuncios_path %>

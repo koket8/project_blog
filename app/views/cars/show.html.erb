@@ -1,0 +1,33 @@
+
+
+<div class="container center">
+<h1>recuerda que si no tienes o quieres cambiar tu foto de perfil lo puedes hacer desde <a href="https://es.gravatar.com/"> gravatar </a> </h1>
+<h1> <%=@car.username.upcase  %></h1><%= image_tag(@car.avatar, :class=> "img-circular")%>
+</div>
+
+<div class=" container">
+
+
+
+<h1> ARTICULOS SUBIDOS </h1>
+
+
+<% @streets.each do |street|  %>
+	
+   
+
+ <h1><%= link_to street.title.upcase.truncate(63), street  %> - <%= "#{street.views} vista(s)" %>  </h1>
+           
+    
+    
+    <div class="borderr">
+   <h2><%= sanitize(street.body).truncate(60, :separator => " ").html_safe %></h2> <%= link_to "eliminar articulo", street, method: :delete if current_car.id == @car.id %> <p><%= link_to "editar articulo", edit_street_path(street) if current_car.id == @car.id %></p> 
+     </div>
+        
+<% end  %>
+
+
+</div>
+
+
+</div>
