@@ -11,9 +11,6 @@ gem 'rails', '~> 5.0.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
-
-gem 'sqlite3'
-
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -85,3 +82,12 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
+group :development do
+gem 'sqlite3'
+end
+
+
+group :production do
+gem 'pg'
+gem 'rails_12factor'
+end
